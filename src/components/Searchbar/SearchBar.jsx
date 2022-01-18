@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SearchBar.module.css";
+import styles from "./Searchbar.module.css";
 
 const SearchBar = ({ handleChange, handleSubmit }) => {
   return (
