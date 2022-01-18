@@ -5,9 +5,9 @@ class ImageGalleryItem extends Component {
   render() {
     const { id, webformatURL, largeImageURL } = this.props;
     return (
-      <li id={id} className={styles.ImageGaleryItem}>
+      <li id={id}>
         <img
-          className={styles.ImageGalleryItemImage}
+          className={styles.ImageGalleryItem}
           src={webformatURL}
           alt="opis obrazka"
           data-img={largeImageURL}

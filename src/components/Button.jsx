@@ -5,7 +5,7 @@ const Button = ({ loadMore }) => {
   return (
     <button onClick={loadMore} className={styles.Button}>
       {" "}
-      Load more
+      LOAD MORE
     </button>
   );
 };

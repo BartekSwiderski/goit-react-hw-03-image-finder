@@ -6,6 +6,7 @@ import Searchbar from "./components/Searchbar";
 import ImageGallery from "./components/ImageGallery";
 import Button from "./components/Button";
 import Modal from "./components/Modal";
+import styles from "./components/Gallery.module.css";
 const API_KEY = "23744712-142a310b592b893afddd0f0d4";
 class App extends Component {
   state = {
@@ -100,13 +101,18 @@ class App extends Component {
             openModalWindow={this.openModalWindow}
           />
         ) : (
-          <Audio heigth="100" width="100" color="grey" />
+          <div>
+            <Audio heigth="100" width="100" color="grey" />
+            <p>sgdf</p>
+          </div>
         )}
-        <Button loadMore={this.loadMore} />
+        <div className={styles.btn}>
+          <Button loadMore={this.loadMore} />
+        </div>
         {this.state.isModalOpen === true ? (
           <Modal closeModal={this.closeModal} largeImg={this.state.largeImg} />
         ) : (
-          <></>
+          <p>sgdf</p>
         )}
       </div>
     );
