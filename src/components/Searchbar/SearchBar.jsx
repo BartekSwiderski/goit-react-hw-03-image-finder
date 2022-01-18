@@ -1,30 +1,25 @@
-import styles from "./Searchbar.module.css"
-import Button from "./../Button/Button"
+import React from "react";
+import styles from "./SearchBar.module.css";
 
-const Searchbar = ({ onSubmit }) => {
-  const findImgs = (e) => {
-    e.preventDefault()
-    onSubmit(e.currentTarget.elements.search.value)
-  }
-
+const SearchBar = ({ handleChange, handleSubmit }) => {
   return (
-    <header>
-      <form className={styles.Searchbar} onSubmit={findImgs}>
-        <Button className={styles.SearchForm_button}>
-          <span className={styles.SearchForm_button_label}>Search</span>
-        </Button>
+    <header className={styles.Searchbar}>
+      <form onSubmit={handleSubmit} className={styles.SearchForm}>
+        <button type="submit" className={styles.SearchFormButton}>
+          <span className={styles.SearchFormButtonLabel}>Search</span>
+        </button>
 
         <input
-          className={styles.SearchForm_input}
+          className={styles.SearchFormInput}
           type="text"
-          name="search"
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
+          onChange={handleChange}
         />
       </form>
     </header>
-  )
-}
+  );
+};
 
-export default Searchbar
+export default SearchBar;
