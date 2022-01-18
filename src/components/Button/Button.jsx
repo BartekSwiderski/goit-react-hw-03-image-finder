@@ -1,13 +1,16 @@
-import React from "react";
-import styles from "./Button.module.css";
+import React from "react"
+import styles from "./Button.module.css"
 
-const Button = ({ loadMore }) => {
+const Button = (props) => {
+  const { className, onClick } = props
+
+  const newStyle = className ? className : styles.Button
+
   return (
-    <button onClick={loadMore} className={styles.Button}>
-      {" "}
-      Load more
+    <button type="submit" className={newStyle} onClick={onClick}>
+      <span>{props.children}</span>
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
