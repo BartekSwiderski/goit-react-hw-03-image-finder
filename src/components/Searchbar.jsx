@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ImageGallery.module.css";
 
-const SearchBar = ({ handleChange, handleSubmit }) => {
+const Searchbar = ({ handleChange, handleSubmit }) => {
   return (
     <header className={styles.Searchbar}>
       <form onSubmit={handleSubmit} className={styles.SearchForm}>
@@ -22,4 +22,4 @@ const SearchBar = ({ handleChange, handleSubmit }) => {
   );
 };
 
-export default SearchBar;
+export default Searchbar;
