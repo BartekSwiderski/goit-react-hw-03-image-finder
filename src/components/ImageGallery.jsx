@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
-import style from "./ImageGallery.module.css";
+import ImageGalleryItem from "./ImageGalleryItem";
+import style from "./Gallery.module.css";
 
 class ImageGallery extends Component {
   render() {

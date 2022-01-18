@@ -2,10 +2,10 @@ import "./App.css";
 import React, { Component } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import SearchBar from "./components/Searchbar/SearchBar";
+import Searchbar from "./components/Searchbar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Button from "./components/Button/Button";
-import Modal from "./components/Modal/Modal";
+import Modal from "./components/Modal";
 class App extends Component {
   state = {
     images: [],
@@ -90,7 +90,7 @@ class App extends Component {
 
     return (
       <div>
-        <SearchBar
+        <Searchbar
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />

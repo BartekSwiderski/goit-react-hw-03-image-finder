@@ -2,10 +2,11 @@ import "./App.css";
 import React, { Component } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Audio } from "react-loader-spinner";
-import SearchBar from "./components/Searchbar/SearchBar";
-import ImageGallery from "./components/ImageGallery/ImageGallery";
-import Button from "./components/Button/Button";
-import Modal from "./components/Modal/Modal";
+import Searchbar from "./components/Searchbar";
+import ImageGallery from "./components/ImageGallery";
+import Button from "./components/Button";
+import Modal from "./components/Modal";
+const API_KEY = "23744712-142a310b592b893afddd0f0d4";
 class App extends Component {
   state = {
     images: [],
@@ -19,7 +20,7 @@ class App extends Component {
   fetchImages = (searchQuery, page) => {
     try {
       fetch(
-        `https://pixabay.com/api/?&q=${searchQuery}&page=${page}&key=15898685-89bff7612e9c08763771f3be3&image_type=photo&orientation=horizontal&per_page=12`
+        `https://pixabay.com/api/?&q=${searchQuery}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
       )
         .then((data) => data.json())
         .then((data) => {
@@ -54,7 +55,6 @@ class App extends Component {
 
   loadMore = (e) => {
     e.preventDefault();
-    // this.setState({ isLoaded: false });
     console.log(this.state.page);
     this.fetchImages(this.state.searchBy, this.state.page);
   };
@@ -90,7 +90,7 @@ class App extends Component {
 
     return (
       <div>
-        <SearchBar
+        <Searchbar
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
@@ -100,7 +100,7 @@ class App extends Component {
             openModalWindow={this.openModalWindow}
           />
         ) : (
-          <Audio heigth="100" width="100" color="grey" arialLabel="loading" />
+          <Audio heigth="100" width="100" color="grey" />
         )}
         <Button loadMore={this.loadMore} />
         {this.state.isModalOpen === true ? (
