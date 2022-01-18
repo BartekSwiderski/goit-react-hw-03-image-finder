@@ -2,10 +2,10 @@ import "./App.css";
 import React, { Component } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import Searchbar from "./components/Searchbar";
-import ImageGallery from "./components/ImageGallery";
-import Button from "./components/Button";
-import Modal from "./components/Modal";
+import SearchBar from "./components/Searchbar/SearchBar";
+import ImageGallery from "./components/ImageGallery/ImageGallery";
+import Button from "./components/Button/Button";
+import Modal from "./components/Modal/Modal";
 class App extends Component {
   state = {
     images: [],
@@ -90,7 +90,7 @@ class App extends Component {
 
     return (
       <div>
-        <Searchbar
+        <SearchBar
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
@@ -100,15 +100,13 @@ class App extends Component {
             openModalWindow={this.openModalWindow}
           />
         ) : (
-          {
-            /* <Loader
+          <Loader
             className="wrapper"
             type="TailSpin"
             color="#00BFFF"
             height={80}
             width={80}
-          /> */
-          }
+          />
         )}
         <Button loadMore={this.loadMore} />
         {this.state.isModalOpen === true ? (
