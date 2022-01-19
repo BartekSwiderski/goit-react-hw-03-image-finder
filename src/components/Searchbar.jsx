@@ -18,7 +18,7 @@ const SearchBar = ({ handleChange, handleSubmit }) => {
           type="text"
           autoComplete="off"
           autoFocus
-          placeholder="Search images and photos"
+          placeholder="Search"
           onChange={handleChange}
         />
       </form>
