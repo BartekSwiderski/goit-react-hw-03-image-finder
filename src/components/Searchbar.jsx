@@ -9,6 +9,7 @@ const SearchBar = ({ handleChange, handleSubmit }) => {
           <img
             width="22px"
             src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
+            alt="lens"
           />
         </button>
 
