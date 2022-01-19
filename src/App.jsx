@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { Component } from "react";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Searchbar from "./components/Searchbar";
 import ImageGallery from "./components/ImageGallery";
 import Button from "./components/Button";
@@ -10,7 +9,7 @@ const API_KEY = "23744712-142a310b592b893afddd0f0d4";
 class App extends Component {
   state = {
     images: [],
-    searchBy: "",
+    searchKey: "",
     page: 1,
     largeImg: "",
     isModalOpen: false,
@@ -41,17 +40,17 @@ class App extends Component {
   handleChange = (e) => {
     this.setState({ page: 1 });
     const value = e.target.value;
-    this.setState({ searchBy: value });
+    this.setState({ searchKey: value });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.fetchImages(this.state.searchBy, this.state.page);
+    this.fetchImages(this.state.searchKey, this.state.page);
   };
 
   loadMore = (e) => {
     e.preventDefault();
-    this.fetchImages(this.state.searchBy, this.state.page);
+    this.fetchImages(this.state.searchKey, this.state.page);
   };
 
   openModalWindow = (e) => {
@@ -75,7 +74,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.fetchImages(this.state.searchBy, this.state.page);
+    this.fetchImages(this.state.searchKey, this.state.page);
   }
 
   render() {
